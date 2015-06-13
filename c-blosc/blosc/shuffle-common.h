@@ -31,10 +31,10 @@
     (defined(_M_X64) || (defined(_M_IX86) && _M_IX86_FP >= 2))
   #define __SSE2__
 #else
-  #warning "_MSC_VER = " _MSC_VER
-  #warning "_M_X64 = " _M_X64 
-  #warning "_M_IX86 = " _M_IX86
-  #warning "_M_IX86_FP = " _M_IX86_FP 
+  #pragma message ( "_MSC_VER = " #_MSC_VER )
+  #pragma message ( "_M_X64 = " #_M_X64  )
+  #pragma message ( "_M_IX86 = " #_M_IX86 )
+  #pragma message ( "_M_IX86_FP = " #_M_IX86_FP  )
 #endif
 
 /* Import standard integer type definitions */

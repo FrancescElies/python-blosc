@@ -27,14 +27,13 @@
    targeting the minimum architecture level supporting SSE2.
    Other compilers define this as expected and emit warnings
    when it is re-defined. */
+#pragma message ( "_MSC_VER = " #_MSC_VER )
+#pragma message ( "_M_X64 = " #_M_X64  )
+#pragma message ( "_M_IX86 = " #_M_IX86 )
+#pragma message ( "_M_IX86_FP = " #_M_IX86_FP  )
 #if !defined(__SSE2__) && defined(_MSC_VER) && \
     (defined(_M_X64) || (defined(_M_IX86) && _M_IX86_FP >= 2))
   #define __SSE2__
-#else
-  #pragma message ( "_MSC_VER = " #_MSC_VER )
-  #pragma message ( "_M_X64 = " #_M_X64  )
-  #pragma message ( "_M_IX86 = " #_M_IX86 )
-  #pragma message ( "_M_IX86_FP = " #_M_IX86_FP  )
 #endif
 
 /* Import standard integer type definitions */

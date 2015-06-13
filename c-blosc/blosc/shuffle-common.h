@@ -30,7 +30,12 @@
 #define STRING2(x) #x
 #define STRING(x) STRING2(x)
 
+
+#pragma message("__SSE2__" STRING(__SSE2__))
 #pragma message("_MSC_VER" STRING(_MSC_VER))
+#pragma message("_M_X64" STRING(_M_X64))
+#pragma message("_M_IX86" STRING(_M_IX86))
+#pragma message("_M_IX86_FP" STRING(_M_IX86_FP))
 
 #if !defined(__SSE2__) && defined(_MSC_VER) && \
     (defined(_M_X64) || (defined(_M_IX86) && _M_IX86_FP >= 2))
